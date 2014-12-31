@@ -7,6 +7,9 @@
     "pciinfo": "bin/pciinfo.js",
     "hackintoshdrivers": "bin/hackintoshdrivers.js"
   },
+  "scripts": {
+    "test": "jshint *.js bin/*.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/konsumer/pciinfo.git"
@@ -24,7 +27,11 @@
   },
   "homepage": "https://github.com/konsumer/pciinfo",
   "dependencies": {
+    "bluebird": "^2.5.3",
     "commander": "^2.6.0",
     "request": "^2.51.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.11"
   }
 }

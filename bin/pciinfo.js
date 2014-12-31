@@ -1,21 +1,22 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var pciinfo = require('../');
 var pkg = require('../package.json');
 var program = require('commander');
 var fs = require('fs');
 
 program
-  .version(pkg.version)
   .usage('[options]')
-  .option('-p, --pci [value]', 'your pci.ids.gz file (from https://pci-ids.ucw.cz/)')
+  .option('-p, --pci [value]', 'your pci.ids.gz file')
   .parse(process.argv);
 
 if (!program.pci){
 	try{
 		program.pci = fs.realpathSync(__dirname + '/pci.ids.gz');
 	}catch(e){
-		console.log('You need to download pci.ids.gz from https://pci-ids.ucw.cz/ and put it in ' + __dirname);
+		console.log('You need to download pci.ids.gz and put it in ' + __dirname);
 		process.exit(1);
 	}
 }
