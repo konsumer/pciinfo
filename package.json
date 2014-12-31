@@ -4,8 +4,8 @@
   "description": "Cross-platform PCI info",
   "main": "index.js",
   "bin": {
-    "pciinfo": "pciinfo.js",
-    "hackintoshdrivers": "hackintoshdrivers.js"
+    "pciinfo": "bin/pciinfo.js",
+    "hackintoshdrivers": "bin/hackintoshdrivers.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
