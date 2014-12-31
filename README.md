@@ -46,6 +46,6 @@ Eventually, I will [put this in a pkg](https://developer.apple.com/library/mac/d
 You should be good-to-go.
 
 
-### Other Operating systems
+### Other Operating Systems
 
 `lspci` (from pciutils) needs to be in your path.
