@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/konsumer/pciinfo/issues"
   },
-  "homepage": "https://github.com/konsumer/pciinfo"
+  "homepage": "https://github.com/konsumer/pciinfo",
+  "dependencies": {
+    "commander": "^2.6.0"
+  }
 }
