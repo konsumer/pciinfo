@@ -32,11 +32,6 @@ I also included 2 CLI utils. `pciinfo` will give you a nice JSON list of your PC
 If you want `pciinfo` & `hackintoshdrivers` in your path, do `npm install -g pciinfo`. Both utils have a `--help` flag, so you can learn more about how they work.
 
 
-### Linux
-
-`lspci` (from pciutils) needs to be in your path. This is really standard, so it will probably work without installing anything.
-
-
 ### OSX
 
 You will need to install the kext in `bin/darwin/directhw.tgz` for this to work.
@@ -45,6 +40,12 @@ Extract the kext, then install with `sudo kextutil DirectHW.kext`. Alternately, 
 
 Eventually, I will [put this in a pkg](https://developer.apple.com/library/mac/documentation/Darwin/Conceptual/KEXTConcept/KEXTConceptPackaging/packaging_tutorial.html) or write code around installing it, so it's automated & get some actual-Mac testing in to see if it works.
 
+
 ### Windows
 
 You should be good-to-go.
+
+
+### Other *nix
+
+`lspci` (from pciutils) needs to be in your path.

@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/konsumer/pciinfo",
   "dependencies": {
-    "commander": "^2.6.0"
+    "commander": "^2.6.0",
+    "request": "^2.51.0"
   }
 }
