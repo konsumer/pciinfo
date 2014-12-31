@@ -9,5 +9,5 @@ program
   .usage('[options]')
   .option('-p, --pci [value]', 'your pci.id file (from https://pci-ids.ucw.cz/)')
   .option('-i, --info', 'Just get info on hackintosh kexts, don\'t actually download them')
-  .option('-o, --out [directory]', 'Download the kexts to this directory (defaults to current)')
+  .option('-o, --out [directory]', 'Kext download directory (defaults to current)')
   .parse(process.argv);
