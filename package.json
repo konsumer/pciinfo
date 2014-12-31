@@ -1,0 +1,28 @@
+{
+  "name": "pciinfo",
+  "version": "1.0.0",
+  "description": "Cross-platform PCI info",
+  "main": "index.js",
+  "bin": {
+    "pciinfo": "hackintoshdrivers.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/konsumer/pciinfo.git"
+  },
+  "keywords": [
+    "pci",
+    "lspci",
+    "hackintosh",
+    "kexts"
+  ],
+  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/konsumer/pciinfo/issues"
+  },
+  "homepage": "https://github.com/konsumer/pciinfo"
+}
