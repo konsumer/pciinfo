@@ -5,8 +5,6 @@ var exec = require('child_process').exec;
 var bluebird = require('bluebird');
 var request = bluebird.promisify(require('request'));
 
-var lspcicmd = 'lspci';
-
 var osMap = {
   1: '10.5', // Leopard
   2: '10.6', // Snow Leopard
@@ -16,6 +14,8 @@ var osMap = {
   6: '10.10' // Yosemite
 };
 
+var lspcicmd = 'lspci';
+
 if (process.platform === 'darwin'){
   lspcicmd = fs.realpathSync(__dirname + '/bin/darwin/lspci');
 }
@@ -24,15 +24,15 @@ if (process.platform === 'win32'){
   lspcicmd = fs.realpathSync(__dirname + '/bin/win32/lspci.exe');
 }
 
+// escape arguments for the shell
 // discuss at: http://phpjs.org/functions/escapeshellarg/
 function escapeshellarg(arg) {
-  var ret = '';
-  ret = arg.replace(/[^\\]'/g, function(m) {
+  return '\'' + arg.replace(/[^\\]'/g, function(m) {
     return m.slice(0, 1) + '\\\'';
-  });
-  return '\'' + ret + '\'';
+  }) + '\'';
 }
 
+// parse lspci output in a nice JSON object
 function pciinfo(cb, pciid){
   pciid = pciid || __dirname + '/bin/pci.ids.gz';
   fs.realpath(pciid, function(err, pciid){
@@ -61,7 +61,36 @@ function pciinfo(cb, pciid){
   });
 }
 
+// parse CSV with '|' for seperator
+function parseOlarila(text){
+  return text.trim().split('\n').map(function(line){
+    return line.trim().split('|');
+  });
+}
 
+// get info about kexts for this system
+function hackintosh(cb, pciid, os){
+  pciinfo(function(err, info){
+    if (err) return cb(err);
+    bluebird.all(info.map(function(pciDevice){
+      return request('http://olarila.com/' +
+        'kexts/kexts/kextsearch.php?' +
+        'cid=2&version=1&srch=' + pciDevice.vendorId);
+    }))
+      .then(function(res){
+        var kextinfo = res
+          .filter(function(kext){
+            return kext;
+          })
+          .map(function(kext){
+            return parseOlarila(kext[1]);
+          });
+        console.log(kextinfo);
+      }, cb);
+  }, pciid);
+}
+
+/*
 function info2data(cb, pciid, os){
   pciinfo(function(err, info){
     if (err) return cb(err);
@@ -85,14 +114,9 @@ function info2data(cb, pciid, os){
               kname: r[3]
             };
             return out;
-          })
-          .filter(function(out){
-            return out.os === os;
           });
       });
-      cb(null, info.filter(function(pciDevice){
-        return pciDevice.kext.length > 0;
-      }));
+      cb(null, info);
     }, cb);
   }, pciid);
 }
@@ -103,7 +127,9 @@ function hackintosh(cb, pciid, os){
     info.forEach(function(pciDevice){
       var promises = [];
       pciDevice.kext.forEach(function(kext){
-        promises.push(request('http://olarila.com/kexts/kexts/downloads.php?kname='+kext.kname).then(function(res){
+        promises.push(request('http://olarila.com/' +
+          'kexts/kexts/downloads.php?' +
+          'kname=' + kext.kname).then(function(res){
           kext.downloads = res[1].trim().split('\n').map(function(l){
             var lr = l.split('|');
               return {
@@ -120,6 +146,8 @@ function hackintosh(cb, pciid, os){
     });
   }, pciid, os);
 }
+
+*/
 
 module.exports = pciinfo;
 module.exports.hackintosh = hackintosh;
