@@ -2,6 +2,8 @@
 
 Cross-platform PCI info in nodejs.
 
+[![Code Climate](https://codeclimate.com/github/konsumer/pciinfo/badges/gpa.svg)](https://codeclimate.com/github/konsumer/pciinfo)
+
 ## usage
 
 ```javascript
