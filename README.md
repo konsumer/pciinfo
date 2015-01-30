@@ -2,7 +2,7 @@
 
 Cross-platform PCI info in nodejs.
 
-[![npm](https://www.npmjs.com/package/pciinfo)](https://nodei.co/npm/pciinfo.png)
+[![npm](https://nodei.co/npm/pciinfo.png)](https://www.npmjs.com/package/pciinfo)
 [![Build Status](https://travis-ci.org/konsumer/pciinfo.svg?branch=master)](https://travis-ci.org/konsumer/pciinfo)
 [![Code Climate](https://codeclimate.com/github/konsumer/pciinfo/badges/gpa.svg)](https://codeclimate.com/github/konsumer/pciinfo)
 
