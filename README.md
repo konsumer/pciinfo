@@ -1,6 +1,10 @@
-# IN PROGRESS: NOT COMPLETE
+# pciinfo
 
 Cross-platform PCI info in nodejs.
+
+[![npm](https://www.npmjs.com/package/pciinfo)](https://nodei.co/npm/pciinfo.png)
+[![Build Status](https://travis-ci.org/konsumer/pciinfo.svg?branch=master)](https://travis-ci.org/konsumer/pciinfo)
+[![Code Climate](https://codeclimate.com/github/konsumer/pciinfo/badges/gpa.svg)](https://codeclimate.com/github/konsumer/pciinfo)
 
 ## usage
 
@@ -13,16 +17,7 @@ pciinfo(function(error, info){
 });
 ```
 
-If you want a list of hackintosh driver suggestions, you can do this:
-
-```javascript
-pciinfo.hackintosh(function(error, info){
-	if (error) throw error;
-	console.log(info);
-});
-```
-
-I also included 2 CLI utils. `pciinfo` will give you a nice JSON list of your PCI devices, and `hackintoshdrivers` will find hackintosh kexts to support your hardware & download them.
+I also included a CLI utils. `pciinfo` will give you a nice JSON list of your PCI devices.
 
 
 ## installation
