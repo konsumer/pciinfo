@@ -17,14 +17,14 @@ pciinfo(function(error, info){
 });
 ```
 
-I also included a CLI utils. `pciinfo` will give you a nice JSON list of your PCI devices.
+I also included a CLI util. `pciinfo` will give you a nice JSON list of your PCI devices.
 
 
 ## installation
 
 `npm install --save pciinfo`
 
-If you want `pciinfo` & `hackintoshdrivers` in your path, do `npm install -g pciinfo`. Both utils have a `--help` flag, so you can learn more about how they work.
+If you want `pciinfo` in your path, do `npm install -g pciinfo`. Both utils have a `--help` flag, so you can learn more about how they work.
 
 
 ### OSX
