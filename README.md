@@ -24,12 +24,21 @@ I also included a CLI util. `pciinfo` will give you a nice JSON list of your PCI
 
 `npm install --save pciinfo`
 
-If you want `pciinfo` in your path, do `npm install -g pciinfo`. Both utils have a `--help` flag, so you can learn more about how they work.
+If you want `pciinfo` in your path, do `npm install -g pciinfo`.
+
+```
+  Usage: pciinfo [options]
+
+  Options:
+
+    -h, --help         output usage information
+    -p, --pci [value]  your pci.ids.gz file
+```
 
 
 ### OSX
 
-You will need to install `bin/DirectHW.pkg` for this to work. It will install DirectHW.kext in your system directory.
+You should be good-to-go.
 
 
 ### Windows

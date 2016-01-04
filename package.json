@@ -1,6 +1,6 @@
 {
   "name": "pciinfo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cross-platform PCI info",
   "main": "index.js",
   "bin": {
@@ -16,9 +16,7 @@
   },
   "keywords": [
     "pci",
-    "lspci",
-    "hackintosh",
-    "kexts"
+    "lspci"
   ],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "license": "MIT",
@@ -27,9 +25,7 @@
   },
   "homepage": "https://github.com/konsumer/pciinfo",
   "dependencies": {
-    "bluebird": "^2.5.3",
-    "commander": "^2.6.0",
-    "request": "^2.51.0"
+    "commander": "^2.6.0"
   },
   "devDependencies": {
     "jshint": "^2.5.11"
